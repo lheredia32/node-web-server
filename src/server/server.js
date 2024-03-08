@@ -1,8 +1,8 @@
-const express = require("express");
-const path = require("path"); // path hace referencia a todas las carpetas de la aplicación
+import express from "express";
+import path from "path"; // path hace referencia a todas las carpetas de la aplicación
 // a traves de ella se puede navegar por las carpetas
 
-const startServer = (options) => {
+export const startServer = (options) => {
   const { port, public_path = "public" } = options;
 
   const app = express();
@@ -17,10 +17,6 @@ const startServer = (options) => {
   });
 
   app.listen(port, () => {
-    console.log(`Listening on port ${port}`)
-  })
-};
-
-module.exports = {
-  startServer,
+    console.log(`Listening on port ${port}`);
+  });
 };
